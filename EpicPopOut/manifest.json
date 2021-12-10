@@ -1,0 +1,13 @@
+{
+    "name": "EpicMusic",
+    "version": "0.01",
+    "description": "Play your favoutite music here",
+    "browser_action": {
+      "default_popup": "popout.html"
+    },
+    "background": {
+        "page": "background.html",
+        "persistent": true 
+    },
+    "manifest_version": 2
+}

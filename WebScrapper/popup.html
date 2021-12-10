@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Web Scrapper</title>
+
+    <style>
+        body {
+            max-height: 500px;
+            overflow: auto;
+            width: 300px;
+        }
+
+        select {
+            width: 55px;
+        }
+
+        input {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Setup Scrape
+    </h1>
+    <div class="command-list">
+        <div class="command-items">
+            <select>
+                <option value="wait">Wait</option>
+                <option value="click">Click</option>
+                <option value="enter">Enter value</option>
+                <option value="save">Save</option>
+            </select>
+            <input placeholder="200ms" class="value-1">
+            <input placeholder="Optional" class="value-2">
+        </div>
+    </div>
+    <div class="action-buttons">
+        <button class="add-cmd">Add</button>
+        <button class="run">Run</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

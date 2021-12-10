@@ -30,14 +30,22 @@ function createCmdObject() {
     cmdArr.push(itemObj);
   }
 
-  console.log(cmdArr);
+  //   console.log(cmdArr);
 
   chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-    var activeTab = tabs[0];
     var obj = cmdArr;
-    chrome.tabs.sendMessage(activeTab.id, {
+    console.log(obj[0].one + " " + obj[0].two);
+    chrome.tabs.sendMessage(tabs[0].id, {
       command: "runCommands",
       data: obj,
     });
   });
 }
+
+chrome.runtime.onMessage.addListener((msg, sender, response) => {
+  if (msg.command == "run-complete") {
+    document.querySelector("textarea").value = JSON.stringify(msg.data);
+    document.querySelector("textarea").style.display = "block";
+    alert("Commands have been run");
+  }
+});
